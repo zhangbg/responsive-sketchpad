@@ -373,8 +373,8 @@
      * Resize the canvas maintaining original aspect ratio
      * @param  {number} width - New width of the canvas
      */
-    Sketchpad.prototype.resize = function (width) {
-        var height = width * this.opts.aspectRatio;
+    Sketchpad.prototype.resize = function (width, height) {
+		height = height || width * this.opts.aspectRatio;
         this.opts.lineSize = this.opts.lineSize * (width / this.opts.width);
         this.opts.width = width;
         this.opts.height = height;
